@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @import "tailwindcss"; 
+
+        @layer base {
+            button {
+                @apply rounded-md bg-slate-200 border-1 border-slate-400 px-4 py-1 my-5 mx-5 text-sm cursor-pointer disabled:opacity-50
+            }
+        }
+    </style>
+
+    <title>Calculadora de Nivel de Experiencia</title>
+</head>
+<body class="bg-[url('img.jpg')] bg-cover bg-center bg-no-repeat w-full min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full border border-slate-200">
+        <h1 class="text-2xl font-bold text-slate-800 text-center mb-6">Nivel de Experiencia</h1>
+        
+        <form id="formExperiencia" class="space-y-4">
+            <div>
+                <label for="nombre" class="block text-sm font-semibold text-slate-600 mb-1">Nombre</label>
+                <input type="text" id="nombre" required 
+                       class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label for="anios" class="block text-sm font-semibold text-slate-600 mb-1">Años trabajando</label>
+                <input type="number" id="anios" min="0" required 
+                       class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <button type="submit" 
+                    class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition duration-200 cursor-pointer">
+                Calcular Nivel
+            </button>
+        </form>
+
+        <div id="resultado" class="mt-6 p-4 rounded-lg text-center font-medium hidden"></div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
